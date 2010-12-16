@@ -1,0 +1,11 @@
+
+
+* Fabien Potencier
+
+    The Client class is part of the Goutte project available here https://github.com/fabpot/Goutte.
+
+* François Zaninotto
+
+    The verbose mode come from the sfWebBrowserPlugin plugin (http://www.symfony-project.org/plugins/sfWebBrowserPlugin)
+
+* Zend Framework Team
