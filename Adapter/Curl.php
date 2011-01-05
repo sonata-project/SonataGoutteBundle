@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Bundle\GoutteBundle\Adapter;
+namespace Bundle\Sonata\GoutteBundle\Adapter;
 
 use Zend\Http\Client\Adapter\Curl as BaseCurl;
 

@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Bundle\GoutteBundle;
+namespace Bundle\Sonata\GoutteBundle;
 
 use Bundle\GoutteBundle\Goutte\Client;
 use Symfony\Component\BrowserKit\History;

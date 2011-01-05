@@ -1,6 +1,6 @@
 <?php
 
-namespace Bundle\GoutteBundle\Goutte;
+namespace Bundle\Sonata\GoutteBundle\Goutte;
 
 use Symfony\Component\BrowserKit\Client as BaseClient;
 use Symfony\Component\BrowserKit\History;

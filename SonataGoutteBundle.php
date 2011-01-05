@@ -8,10 +8,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Bundle\GoutteBundle;
+namespace Bundle\Sonata\GoutteBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class GoutteBundle extends Bundle
+class SonataGoutteBundle extends Bundle
 {
 }
