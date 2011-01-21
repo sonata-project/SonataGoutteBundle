@@ -9,7 +9,7 @@
  */
 
 
-namespace Bundle\Sonata\GoutteBundle\DependencyInjection;
+namespace Sonata\GoutteBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\DependencyInjection\Resource\FileResource;

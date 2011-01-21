@@ -10,7 +10,7 @@ Configuration
 * edit your config.yml and add these lines
 
         goutte.config:
-            class: Bundle\GoutteBundle\Manager
+            class: Sonata\GoutteBundle\Manager
             clients:
                 default:
                     config:
