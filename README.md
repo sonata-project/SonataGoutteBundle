@@ -9,7 +9,7 @@ Configuration
 
 * edit your config.yml and add these lines
 
-        goutte.config:
+        sonata_goutte:
             class: Sonata\GoutteBundle\Manager
             clients:
                 default:

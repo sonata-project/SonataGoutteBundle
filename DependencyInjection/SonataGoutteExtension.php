@@ -12,7 +12,7 @@
 namespace Sonata\GoutteBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
-use Symfony\Component\DependencyInjection\Resource\FileResource;
+use Symfony\Component\Config\Resource\FileResource;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\DependencyInjection\Definition;
@@ -24,7 +24,7 @@ use Symfony\Component\DependencyInjection\Extension\Extension;
  *
  * @author     Thomas Rabaix <thomas.rabaix@sonata-project.org>
  */
-class GoutteExtension extends Extension
+class SonataGoutteExtension extends Extension
 {
 
     /**
@@ -33,22 +33,23 @@ class GoutteExtension extends Extension
      * @param array            $config    An array of configuration settings
      * @param ContainerBuilder $container A ContainerBuilder instance
      */
-    public function configLoad($configs, ContainerBuilder $container)
+    public function load(array $config, ContainerBuilder $container)
     {
 
+        $config = call_user_func_array('array_merge_recursive', $config);
+        
         // define the page manager
-        foreach ($configs as $config) {
-            $definition = new Definition($config['class']);
-            foreach ($config['clients'] as $name => $configuration) {
+        $definition = new Definition($config['class']);
+        foreach ($config['clients'] as $name => $configuration) {
 
-                $configuration['config'] = isset($configuration['config']) ? $configuration['config'] : array();
-                $configuration['server'] = isset($configuration['server']) ? $configuration['server'] : array();
+            $configuration['config'] = isset($configuration['config']) ? $configuration['config'] : array();
+            $configuration['server'] = isset($configuration['server']) ? $configuration['server'] : array();
 
-                $definition->addMethodCall('addClientConfiguration', array($name, $configuration));
-            }
-
-            $container->setDefinition('goutte', $definition);
+            $definition->addMethodCall('addClientConfiguration', array($name, $configuration));
         }
+
+        $container->setDefinition('goutte', $definition);
+
     }
 
     /**
@@ -71,6 +72,6 @@ class GoutteExtension extends Extension
     public function getAlias()
     {
 
-        return "goutte";
+        return "sonata_goutte";
     }
 }
