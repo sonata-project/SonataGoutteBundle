@@ -9,11 +9,14 @@ Installation
 
 * Add the following entry to ``deps`` then run ``php bin/vendors install``::
 
+    ```
     [goutte]
         git=git://github.com/fabpot/Goutte.git
+    ```
 
 * Register the bundle in ``app/AppKernel.php``::
 
+    ```php
     <?php
 
     // app/AppKernel.php
@@ -25,14 +28,17 @@ Installation
             // ...
         );
     }
+    ```
 
 * Register namespaces in ``app/autoload.php``::
 
+    ```php
     $loader->registerNamespaces(array(
         // ...
         'Goutte'           => __DIR__.'/../vendor/goutte/src',
         'Sonata'           => __DIR__.'/../vendor/bundles',
     ));
+    ```
     
 Configuration
 -------------
