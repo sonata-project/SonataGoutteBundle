@@ -47,7 +47,7 @@ Configuration
 * edit app/autoload.php and AppKernel.php to add the appropriate lines for the Sonata namespace.
 * edit your config.yml and add these lines
 
-        ```yaml
+    ```yaml
         sonata_goutte:
             class: Sonata\GoutteBundle\Manager
             clients:
@@ -63,12 +63,12 @@ Configuration
                         adapter: Sonata\GoutteBundle\Adapter\Curl
                         verbose_log: %kernel.logs_dir%/curl.log
                         verbose: true
-        ```
+    ```
 
 Usage
 -----
         
-        ```php
+   ```php
         public function fetchAction()
         {
             $client = $this->get('goutte')
@@ -82,7 +82,7 @@ Usage
 
             // do stuff with the crawler and related information
         }
-        ```
+    ```
 
 
 
