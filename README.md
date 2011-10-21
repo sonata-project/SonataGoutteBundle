@@ -4,6 +4,36 @@ What is GoutteBundle ?
 GoutteBundle integrated the Goutte project from Fabien Potencier (https://github.com/fabpot/Goutte) into the Symfony2 project.
 
 
+Installation
+------------
+
+* Add the following entry to ``deps`` then run ``php bin/vendors install``::
+
+    [goutte]
+        git=git://github.com/fabpot/Goutte.git
+
+* Register the bundle in ``app/AppKernel.php``::
+
+    <?php
+
+    // app/AppKernel.php
+    public function registerBundles()
+    {
+        return array(
+            // ...
+            new Sonata\GoutteBundle\SonataGoutteBundle(),
+            // ...
+        );
+    }
+
+* Register namespaces in ``app/autoload.php``::
+
+    $loader->registerNamespaces(array(
+        // ...
+        'Goutte'           => __DIR__.'/../vendor/goutte/src',
+        'Sonata'           => __DIR__.'/../vendor/bundles',
+    ));
+    
 Configuration
 -------------
 
@@ -53,4 +83,5 @@ Requirements
 * Symfony2
 * PHP 5.3.2
 * Zend
+* Goutte
 
