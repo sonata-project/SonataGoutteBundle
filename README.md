@@ -33,6 +33,7 @@ Installation
 * Register namespaces in ``app/autoload.php``::
 
     ```php
+    <?php
     $loader->registerNamespaces(array(
         // ...
         'Goutte'           => __DIR__.'/../vendor/goutte/src',
