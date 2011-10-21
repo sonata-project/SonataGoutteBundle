@@ -7,6 +7,7 @@ GoutteBundle integrated the Goutte project from Fabien Potencier (https://github
 Configuration
 -------------
 
+* edit app/autoload.php and AppKernel.php to add the appropriate lines for the Sonata namespace.
 * edit your config.yml and add these lines
 
         sonata_goutte:
