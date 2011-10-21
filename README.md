@@ -67,8 +67,9 @@ Configuration
 
 Usage
 -----
-        
+
     ```php
+    <?php
     public function fetchAction()
     {
         $client = $this->get('goutte')
