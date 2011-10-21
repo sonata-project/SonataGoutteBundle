@@ -10,7 +10,7 @@
 
 namespace Sonata\GoutteBundle;
 
-use Sonata\GoutteBundle\Goutte\Client;
+use Goutte\Client;
 use Symfony\Component\BrowserKit\History;
 use Symfony\Component\BrowserKit\CookieJar;
 
