@@ -9,30 +9,37 @@ Installation
 
 * Add the following entry to ``deps`` then run ``php bin/vendors install``::
 
-    [goutte]
-        git=git://github.com/fabpot/Goutte.git
+```
+[goutte]
+    git=git://github.com/fabpot/Goutte.git
+```
 
 * Register the bundle in ``app/AppKernel.php``::
 
-    <?php
+```php
+<?php
 
-    // app/AppKernel.php
-    public function registerBundles()
-    {
-        return array(
-            // ...
-            new Sonata\GoutteBundle\SonataGoutteBundle(),
-            // ...
-        );
-    }
+// app/AppKernel.php
+public function registerBundles()
+{
+    return array(
+        // ...
+        new Sonata\GoutteBundle\SonataGoutteBundle(),
+        // ...
+    );
+}
+```
 
 * Register namespaces in ``app/autoload.php``::
 
-    $loader->registerNamespaces(array(
-        // ...
-        'Goutte'           => __DIR__.'/../vendor/goutte/src',
-        'Sonata'           => __DIR__.'/../vendor/bundles',
-    ));
+```php
+<?php
+$loader->registerNamespaces(array(
+    // ...
+    'Goutte'           => __DIR__.'/../vendor/goutte/src',
+    'Sonata'           => __DIR__.'/../vendor/bundles',
+));
+```
     
 Configuration
 -------------
@@ -40,40 +47,43 @@ Configuration
 * edit app/autoload.php and AppKernel.php to add the appropriate lines for the Sonata namespace.
 * edit your config.yml and add these lines
 
-        sonata_goutte:
-            class: Sonata\GoutteBundle\Manager
-            clients:
-                default:
-                    config:
-                        adapter: Zend\Http\Client\Adapter\Socket
+```yaml
+sonata_goutte:
+    class: Sonata\GoutteBundle\Manager
+    clients:
+        default:
+            config:
+                adapter: Zend\Http\Client\Adapter\Socket
 
-                curl:
-                    config:
-                        maxredirects: 0
-                        timeout: 30
-                        useragent: Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.6; en-US; rv:1.9.2.3) Gecko/20100401 Firefox/3.6.3
-                        adapter: Sonata\GoutteBundle\Adapter\Curl
-                        verbose_log: %kernel.logs_dir%/curl.log
-                        verbose: true
-
+        curl:
+            config:
+                maxredirects: 0
+                timeout: 30
+                useragent: Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.6; en-US; rv:1.9.2.3) Gecko/20100401 Firefox/3.6.3
+                adapter: Sonata\GoutteBundle\Adapter\Curl
+                verbose_log: %kernel.logs_dir%/curl.log
+                verbose: true
+```
 
 Usage
 -----
 
-        public function fetchAction()
-        {
-            $client = $this->get('goutte')
-                ->getNamedClient('curl');
+```php
+<?php
+public function fetchAction()
+{
+    $client = $this->get('goutte')
+        ->getNamedClient('curl');
 
-            $crawler = $client->request('GET', 'http://symfony-reloaded.org/');
+    $crawler = $client->request('GET', 'http://symfony-reloaded.org/');
 
-            $response = $client->getResponse();
+    $response = $client->getResponse();
 
-            $content = $response->getContent();
+    $content = $response->getContent();
 
-            // do stuff with the crawler and related information
-        }
-
+    // do stuff with the crawler and related information
+}
+```
 
 
 
