@@ -12,6 +12,9 @@ Installation
 ```
 [goutte]
     git=git://github.com/fabpot/Goutte.git
+[SonataGoutteBundle]
+    git=http://github.com/sonata-project/SonataGoutteBundle.git
+    target=/bundles/Sonata/GoutteBundle
 ```
 
 * Register the bundle in ``app/AppKernel.php``::
