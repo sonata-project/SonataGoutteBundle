@@ -12,6 +12,8 @@ Installation
 ```
 [goutte]
     git=git://github.com/fabpot/Goutte.git
+    version=5ecceb7c28a428fb93f283982cc4f5edfd96630b
+
 [SonataGoutteBundle]
     git=http://github.com/sonata-project/SonataGoutteBundle.git
     target=/bundles/Sonata/GoutteBundle
