@@ -64,7 +64,7 @@ sonata_goutte:
             config:
                 maxredirects: 0
                 timeout: 30
-                useragent: Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.6; en-US; rv:1.9.2.3) Gecko/20100401 Firefox/3.6.3
+                useragent: Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.6; en-US) Gecko/20100401 Firefox/3.6.3
                 adapter: Sonata\GoutteBundle\Adapter\Curl
                 verbose_log: %kernel.logs_dir%/curl.log
                 verbose: true
