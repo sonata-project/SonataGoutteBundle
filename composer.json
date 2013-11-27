@@ -24,6 +24,7 @@
     "autoload": {
         "psr-0": { "Sonata\\GoutteBundle": "." }
     },
+    "target-dir": "Sonata/GoutteBundle",
     "extra": {
         "branch-alias": {
             "dev-master": "1.0.x-dev"
