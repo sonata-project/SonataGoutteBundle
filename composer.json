@@ -22,7 +22,7 @@
         "guzzle/plugin-mock": ">=3.0.5,<3.8-dev"
     },
     "autoload": {
-        "psr-0": { "Sonata\GoutteBundle": "." }
+        "psr-0": { "Sonata\\GoutteBundle": "." }
     },
     "extra": {
         "branch-alias": {
