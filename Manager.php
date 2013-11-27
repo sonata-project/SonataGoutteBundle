@@ -37,7 +37,8 @@ class Manager
     public function getClient(array $zendConfig = array(), array $server = array(), History $history = null, CookieJar $cookieJar = null)
     {
 
-        return new Client($zendConfig, $server, $history, $cookieJar);
+        //return new Client($zendConfig, $server, $history, $cookieJar);
+        return new Client($server, $history, $cookieJar);
     }
 
     public function setClientConfiguration($client_configurations)
